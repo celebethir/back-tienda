@@ -1,0 +1,13 @@
+package com.levelup.backend.api.model.dto;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.Getter;
+import lombok.Setter;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+@Getter
+@Setter
+public class CategoryDto {
+    private Long id;
+    private String name;
+}

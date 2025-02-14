@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: backend
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    database-platform: postgres
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/levelup_local}
+    username: ${DATABASE_USERNAME:postgres}
+    password: ${DATABASE_PASSWORD:password}
+  flyway:
+    enabled: true
+    baseline-on-migrate: false
+    url: jdbc:postgresql://localhost:5432/levelup_local
+    user: postgres
+    password: password
