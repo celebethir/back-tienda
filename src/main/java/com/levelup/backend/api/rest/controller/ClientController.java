@@ -44,4 +44,9 @@ public class ClientController {
                             @Validated @RequestBody final ClientUpdateDto clientUpdateDto) {
         return clientProjectionToDtoConverter.convert(clientService.updateClient(id, clientUpdateDto));
     }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable final Long id) {
+        clientService.deleteClient(id);
+    }
 }

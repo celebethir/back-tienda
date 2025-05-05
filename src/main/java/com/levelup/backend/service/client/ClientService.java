@@ -60,7 +60,7 @@ public class ClientService {
     private static void setClientParams(ClientCreateDto clientCreateDto, Client client) {
         client.setName(clientCreateDto.getName());
         client.setLastname(clientCreateDto.getLastname());
-        client.setEmail(clientCreateDto.getPhone());
+        client.setPhone(clientCreateDto.getPhone());
         client.setEmail(clientCreateDto.getEmail());
     }
 
@@ -78,5 +78,10 @@ public class ClientService {
         client.setEmail(clientUpdateDto.getEmail());
         client.setBannedList(clientUpdateDto.getBannedList());
         return clientRepository.save(client);
+    }
+
+    public void deleteClient(@Nonnull final Long id) {
+        findById(id);
+        clientRepository.deleteById(id);
     }
 }
